@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { type NavigationProp } from '@react-navigation/native';
 import App1 from '@/screens/App1';
 
-import * as Screens from '@/screens'
+import * as Screens from './router/router'
 
 type RootStackParamList = {
   App1: undefined;
