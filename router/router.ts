@@ -1,13 +1,13 @@
 import * as Screens from './index';
 
 interface Route {
-  name: string | 'App1.tsx' | 'App2.tsx';
+  name: 'App1' | 'App2';
   component: () => JSX.Element;
 }
 
-const routes: Route[] = Object.entries(Screens).map(([name, component]) => ({
+const routes  = Object.entries(Screens).map(([name, component]) => ({
   name,
   component,
 }));
 
-export default routes;
+export default routes as Route[];

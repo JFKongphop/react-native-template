@@ -15,12 +15,12 @@ interface Route {
   component: () => JSX.Element;
 }
 
-const routes: Route[] = Object.entries(Screens).map(([name, component]) => ({
+const routes  = Object.entries(Screens).map(([name, component]) => ({
   name,
   component,
 }));
 
-export default routes;
+export default routes as Route[];
 `;
 
 if (!fs.existsSync(routerDir)) {
@@ -39,7 +39,7 @@ fs.readdir(screensDir, (err, files) => {
     .filter(file => file.endsWith('.tsx') && file !== 'router.ts')
     .map(file => {
       const name = path.basename(file, '.tsx');
-      fileNames.push(file);
+      fileNames.push(file.replace('.tsx', ''));
       return `export { default as ${name} } from '@/screens/${name}';`;
     })
     .join('\n');
@@ -54,7 +54,7 @@ fs.readdir(screensDir, (err, files) => {
 
   const replacedText = routerFile.replace(
     /name: string;/, 
-    `name: string | '${fileNames.join(`' | '`)}';`
+    `name: '${fileNames.join(`' | '`)}';`
   );
 
   const routerFilePath = path.join(routerDir, 'router.ts');
