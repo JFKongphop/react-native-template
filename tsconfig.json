@@ -2,15 +2,11 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    // "baseUrl": ".",
-    // "paths": {
-    //   "@": ["src/*"],
-    //   "tests": ["tests/*"],
-    //   "@components/*": ["src/components/*"],
-    // },
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "target": "es2020",    // or any higher version that you prefer
+    "module": "esnext",
   }
 }

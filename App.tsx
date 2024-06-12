@@ -16,11 +16,13 @@ export type Navigation = NavigationProp<RootStackParamList>;
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 
+
 export default function App() {
+  console.log('test', import.meta.url)
   return (
 
     <SafeAreaView>
-<App1 />
+      <App1 />
     </SafeAreaView>
     
 
