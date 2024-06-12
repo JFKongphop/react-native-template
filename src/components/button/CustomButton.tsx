@@ -6,7 +6,7 @@ const CustomButton = () => {
     <View style={styles.button}>
       <Text>CustomButton</Text>
     </View>
-  )
+  );
 }
 
 export default CustomButton

@@ -9,7 +9,7 @@ const App1 = () => {
 
   // const app2Handler = () => {
   //   navigation.navigate('App1')
-  // }
+  // };
 
 
   return (

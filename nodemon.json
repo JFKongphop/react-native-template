@@ -1,0 +1,5 @@
+{
+  "watch": ["src/screens"],
+  "ext": "tsx",
+  "exec": "node scripts/file-based-screen.mjs"
+}

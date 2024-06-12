@@ -5,6 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { type NavigationProp } from '@react-navigation/native';
 import App1 from '@/screens/App1';
 
+import * as Screens from '@/screens'
+
 type RootStackParamList = {
   App1: undefined;
   App2: undefined;
@@ -15,10 +17,13 @@ export type Navigation = NavigationProp<RootStackParamList>;
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-
+const routes = Object.entries(Screens).map(([name, component]) => ({
+  name,
+  component,
+}));
 
 export default function App() {
-  console.log('test', import.meta.url)
+  console.log(routes)
   return (
 
     <SafeAreaView>

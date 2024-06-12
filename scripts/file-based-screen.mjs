@@ -1,12 +1,12 @@
-// generateScreensIndex.js
-// const fs = require('fs');
-// const path = require('path');
-
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const screensDir = path.join(__dirname, 'src', 'screens');
-const indexPath = path.join(screensDir, 'index.ts');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const screensDir = path.join(__dirname, '../src/screens');
+const indexPath = path.join(screensDir, '../../index.ts');
 
 fs.readdir(screensDir, (err, files) => {
   if (err) {
