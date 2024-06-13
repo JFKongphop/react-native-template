@@ -1,11 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
+import React, { FC } from 'react'
 
-const CustomButton = () => {
+interface ICustomButton {
+  onPress: () => void;
+}
+
+const CustomButton: FC<ICustomButton> = ({
+  onPress
+}) => {
   return (
-    <View style={styles.button}>
-      <Text>CustomButton</Text>
-    </View>
+    <Pressable
+      onPress={onPress}
+    >
+      <View style={styles.button}>
+        <Text>CustomButton</Text>
+      </View>
+    </Pressable>
   );
 }
 

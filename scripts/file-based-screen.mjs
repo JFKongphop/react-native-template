@@ -36,7 +36,7 @@ fs.readdir(screensDir, (err, files) => {
   }
 
   const exports = files
-    .filter(file => file.endsWith('.tsx') && file !== 'router.ts')
+    .filter(file => file.endsWith('.tsx'))
     .map(file => {
       const name = path.basename(file, '.tsx');
       fileNames.push(file.replace('.tsx', ''));

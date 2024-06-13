@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { type NavigationProp } from '@react-navigation/native';
 import routes from 'router/router';
+import { App1 } from 'router';
 
 type RootStackParamList = {
   App1: undefined;
@@ -17,10 +18,14 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-  <SafeAreaView>
-    <StatusBar style='dark' />
     <NavigationContainer>
-      <Stack.Navigator>
+      <StatusBar style='dark' />
+      <Stack.Navigator
+        screenOptions={{
+          title: 'Hello world',
+          headerBackTitle: 'back'
+        }}
+      >
         {
           routes.map(({ name, component }) => (
             <Stack.Screen
@@ -32,7 +37,6 @@ export default function App() {
         }
       </Stack.Navigator>
     </NavigationContainer>
-    </SafeAreaView>
   );
 }
 
